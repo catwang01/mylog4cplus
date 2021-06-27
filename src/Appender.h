@@ -14,7 +14,7 @@ namespace log
 	public:
 		virtual void append(LoggingEvent &) = 0;
 		virtual void setLayout(std::shared_ptr<Layout> &layout) = 0;
-		Appender(LogLevel level = LogLevel::INFO,
+		Appender(LogLevel level = INFO,
 			 std::shared_ptr<Layout> layoutPtr = NULL) : level(level), layoutPtr(layoutPtr) {}
 
 	protected:
@@ -25,7 +25,7 @@ namespace log
 	class ConsoleAppender : public Appender
 	{
 	public:
-		ConsoleAppender() : Appender(LogLevel::INFO, std::make_shared<SimpleLayout>()) {}
+		ConsoleAppender() : Appender(INFO, std::make_shared<SimpleLayout>()) {}
 		void append(LoggingEvent &event) override
 		{
 			std::cout << layoutPtr->format(event) << std::endl;

@@ -11,7 +11,7 @@ namespace log
 		typedef std::shared_ptr<Appender> AppendPtr;
 		typedef std::vector<AppendPtr> AppenderList;
 		public:
-			Logger(Logger* parent=NULL, LogLevel level=LogLevel::INFO): parent(parent), level(level) {}
+			Logger(Logger* parent=NULL, LogLevel level=INFO): parent(parent), level(level) {}
 			void addAppender(AppendPtr appender)
 			{
 				appenderList.push_back(appender);

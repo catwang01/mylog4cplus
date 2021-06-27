@@ -3,6 +3,7 @@
 #include <iostream>
 #include "LoggingEvent.h"
 #include <string>
+#include "LogLevel.h"
 
 namespace log
 {
@@ -16,7 +17,7 @@ namespace log
 		public:
 			std::string format(const LoggingEvent& event) const override
 			{
-				return "filename: " + event.filename + " - lineno: " + std::to_string(event.lineno) + " - " + event.message;
+				return "filename: " + event.filename + " - lineno: " + std::to_string(event.lineno) + " - level: " + LogLevelManager::getInstance().Level2Str(event.level) + " " + event.message;
 			}
 	};
 };

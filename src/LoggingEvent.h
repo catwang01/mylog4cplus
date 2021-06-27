@@ -15,7 +15,7 @@ namespace log
 		LoggingEvent(const std::string &message,
 			     int lineno,
 			     const std::string& filename,
-			     LogLevel level = LogLevel::INFO)
+			     LogLevel level = INFO)
 			      : message(message), lineno(lineno), filename(filename), level(level) {}
 	};
 };
